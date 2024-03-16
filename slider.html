@@ -1,0 +1,456 @@
+<head>
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://bootsnipp.com/dist/bootsnipp.min.css?ver=70eabcd8097cd299e1ba8efe436992b7">
+    <style>
+        body {
+  padding-top: 60px;
+}
+
+.price-box {
+  margin: 0 auto;
+  background: #E9E9E9;
+  border-radius: 10px;
+  padding: 40px 15px;
+  /*width: 500px;*/
+}
+
+.ui-widget-content {
+  border: 1px solid #bdc3c7;
+  background: #e1e1e1;
+  color: #222222;
+  margin-top: 4px;
+}
+
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 7.2em;
+  height: 2.7em;
+  cursor: default;
+  margin: 0 -40px auto !important;
+  text-align: center; 
+  line-height: 30px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+
+.ui-slider .ui-slider-handle .glyphicon {
+  color: #FFFFFF;
+  margin: 0 1px; 
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.ui-corner-all {
+  border-radius: 20px;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.9em;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+  border: 1px solid #f9f9f9;
+  background: #3498db;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  margin-left: -0.5em;
+}
+
+.ui-slider .ui-slider-handle {
+  cursor: pointer;
+}
+
+.ui-slider a,
+.ui-slider a:focus {
+  cursor: pointer;
+  outline: none;
+}
+
+.price, .lead p {
+  font-weight: 600;
+  font-size: 32px;
+  display: inline-block;
+  line-height: 60px;
+  border:0;
+  width: 245px;
+}
+
+h4.great {
+  background: #00ac98;
+  margin: 0 0 25px -60px;
+  padding: 7px 15px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  display: inline-block;
+  -moz-box-shadow:    2px 4px 5px 0 #ccc;
+    -webkit-box-shadow: 2px 4px 5px 0 #ccc;
+    box-shadow:         2px 4px 5px 0 #ccc;
+}
+
+.total {
+  border-bottom: 1px solid #7f8c8d;
+  /*display: inline;
+  padding: 10px 5px;*/
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.total:before {
+  content: "";
+  display: inline;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 3px;
+  background: #7f8c8d;
+  opacity: 0.5;
+}
+
+.price-slider {
+  margin-bottom: 70px;
+}
+
+.price-slider span {
+  font-weight: 200;
+  display: inline-block;
+  color: #7f8c8d;
+  font-size: 13px;
+}
+
+.form-pricing {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.price-form {
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid #eeeeee;
+  min-height: 520px;
+  border-radius: 4px;
+  /*-moz-box-shadow:    0 5px 5px 0 #ccc;
+    -webkit-box-shadow: 0 5px 5px 0 #ccc;
+    box-shadow:         0 5px 5px 0 #ccc;*/
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group span.price {
+  font-weight: 200;
+  display: inline-block;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.help-text {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #737373;
+  /*position: absolute;*/
+  /*margin-left: 20px;*/
+  font-weight: 200;
+  /*text-align: right;*/
+  width: 188px;
+}
+
+.price-form label {
+  font-weight: 200;
+  font-size: 21px;
+}
+
+img.payment {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.ui-slider-range-min {
+  background: #2980b9;
+}
+
+.active-month,
+.active-term {
+  background: #3276b1;
+}
+
+/* HR */
+
+hr.style {
+  margin-top: 0;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+      <div class="price-box">
+        <div class="row">
+          <div class="col-sm-6">
+                <form class="form-horizontal form-pricing" role="form">
+
+                  <div class="price-slider">
+                    <h4 class="great">Amount</h4>
+                   
+                    <div class="col-sm-12">
+                      <div id="slider_amirol"></div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                 
+                      <input name="sliderVal" type="hidden" id="sliderVal" value='0' readonly="readonly" />
+                        <input name="month" type="hidden" id="month" value='24month' readonly="readonly" />
+                        <input name="term" type="hidden" id="term" value='quarterly' readonly="readonly" />
+              
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="price-form">
+
+                  <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Annually ($): </label>
+                          <span class="help-text">Amount that you need to pay</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total"></p> -->
+                            <input class="price lead" name="totalprice" type="text" id="total" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Monthly ($): </label>
+                        
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                           
+                            <input class="price lead" name="totalprice12" type="text" id="total12" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Weekly ($): </label>
+                          <span class="help-text">Amount that you need to pay</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                    
+                            <input class="price lead" name="totalprice52" type="text" id="total52" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div style="margin-top:30px"></div>
+                    <hr class="style">
+
+                  <div class="form-group">
+                      <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+                      </div>
+                  </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                          <img src="https://github.com/AmirolAhmad/Bootstrap-Calculator/blob/master/images/payment.png?raw=true" class="img-responsive payment" />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </form>
+            </div>
+        </div>
+
+          </div>
+
+      </div>
+    </body>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+  
+var p = {
+
+0: "10K",
+1: "15K",
+2: "20K",
+3: "25K",
+4: "30K",
+5: "35K",
+6: "40K",
+7: "45K",
+8: "50K",
+9: "55K",
+10: "60K",
+11: "650K",
+12: "70K",
+13: "75K",
+14: "80K",
+15: "85K",
+16: "90K",
+17: "95K",
+18: "100K",
+19: "110K",
+20: "120K",
+21: "130K",
+22: "140K",
+23: "150K",
+24: "160K",
+25: "170K",
+26: "180K",
+27: "190K",
+28: "200K",
+};
+
+var t = {
+
+0: "100000",
+1: "150000",
+2: "200000",
+3: "250000",
+4: "300000",
+5: "350000",
+6: "400000",
+7: "450000",
+8: "500000",
+9: "550000",
+10: "600000",
+11: "650000",
+12: "700000",
+13: "750000",
+14: "800000",
+15: "850000",
+16: "900000",
+17: "950000",
+18: "1000000",
+19: "1100000",
+20: "1200000",
+21: "1300000",
+22: "1400000",
+23: "1500000",
+24: "1600000",
+25: "1700000",
+26: "1800000",
+27: "1900000",
+28: "2000000",
+
+}
+
+var obj = {
+'24month' : {
+    'quarterly' : '1.41',
+    'monthly' : '1.28',
+    'weekly' : '1.2'
+},
+'18month' : {
+    'quarterly' : '1.38',
+    'monthly' : '1.25',
+    'weekly' : '1.8'
+},
+'12month' : {
+
+    'quarterly' : '1.35',
+    'monthly' : '1.225',
+    'weekly' : '1.15'
+}
+};
+
+$(document).ready(function() {
+
+$("#total").val("10000");
+
+
+
+$("#slider_amirol").slider({
+    range: "min",
+    animate: true,
+
+    min: 0,
+    max: 28,
+    step: 1,
+    slide: 
+        function(event, ui) 
+        {
+            update(1,ui.value); //changed
+            calcualtePrice(ui.value);
+        }
+});
+
+$('.month').on('click',function(event) {
+    var id = $(this).attr('id');
+
+    $('.month').removeClass('selected-month');
+    $(this).addClass('selected-month');
+    $(".month").removeClass("active-month");
+    $(this).addClass("active-month");
+
+    $('#month').val(id);
+
+    calcualtePrice()
+});
+
+$('.term').on('click',function(event) {
+    var id = $(this).attr('id');
+
+    $('.term').removeClass('selected-term');
+    $(this).addClass('selected-term');
+    $(".term").removeClass("active-term");
+    $(this).addClass("active-term");
+    $('#term').val(id);
+
+    calcualtePrice()
+});
+
+update();
+calcualtePrice();
+});
+    
+
+    
+function update(slider,val) {
+
+if(undefined === val) val = 0;
+var amount = p[val];
+
+$('#sliderVal').val(val);
+
+$('#slider_amirol a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+amount+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+}
+
+function calcualtePrice(val){
+
+if(undefined === val)
+    val = $('#sliderVal').val();
+
+var month = $('#month').val();
+var term = obj[month][$('#term').val()];
+
+var totalPrice = t[val]*term;
+
+$("#total").val(totalPrice.toFixed(2));
+$("#total12").val(Math.round((totalPrice)/12).toFixed(2));
+$("#total52").val(Math.round((totalPrice)/52).toFixed(2));
+}
+</script>
